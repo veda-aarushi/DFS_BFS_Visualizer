@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DFS & BFS Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-50 min-h-screen p-8">
+  <div class="bg-white p-6 rounded-2xl shadow-xl max-w-5xl mx-auto space-y-6">
+    <h1 class="text-3xl font-bold text-center text-purple-800">DFS & BFS Graph Visualizer</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <label class="font-semibold block mb-2">Number of Nodes:</label>
+        <input id="nodeCount" type="number" min="2" value="5" class="w-full p-2 border rounded mb-4">
+        <button onclick="generateEdgeInputs()" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Create Graph</button>
+
+        <div id="edgeInputs" class="space-y-2 mt-4"></div>
+
+        <label class="font-semibold block mt-4 mb-2">Start Node:</label>
+        <input id="startNode" type="number" min="0" value="0" class="w-full p-2 border rounded">
+
+        <div class="flex gap-4 mt-4">
+          <button onclick="runDFS()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Run DFS</button>
+          <button onclick="runBFS()" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Run BFS</button>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold mt-6">Traversal Order:</h2>
+          <pre id="output" class="bg-purple-100 p-4 rounded h-32 overflow-auto"></pre>
+        </div>
+      </div>
+
+      <div class="w-full h-[500px] bg-purple-100 border rounded">
+        <svg id="graphCanvas" width="100%" height="100%"></svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
